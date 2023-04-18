@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+{% block conteudo %}
+        <table class="table table-striped table-responsive table-bordered">
+          <thead class="thead-default">
+              <tr>
+                  <th>Name</th>
+                  <th>Author</th>
+                  <th>Year Publication</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for book in books %}
+              <tr>
+                  <td> {{ book.name }} </td>
+                  <td> {{ book.author }} </td>
+                  <td> {{ book.year_publication }} </td>
+                  <th><a href="{{ url_for('edit', id=book.id) }}">Edit</a></th>
+              </tr>
+              {%endfor%}
+          </tbody>
+      </table>
+{% endblock %}
+        <!-- <button class="button-56" role="button">Choose a Book</button> -->
+
+
