@@ -1,0 +1,21 @@
+{% extends "template.html" %}
+{% block conteudo %}
+      <form action="{{ url_for('update') }}" method="post">
+        <fieldset>
+          <input type="hidden" name="id" value="{{ book.id }}">
+          <div class="form-group">
+            <label for="nome">Name</label>
+            <input type="text" id="name" name="name" class="form-control" value="{{book.name}}">
+          </div>
+          <div class="form-group">
+            <label for="categoria">Author</label>
+            <input type="text" id="author" name="author" class="form-control" value="{{book.author}}">
+          </div>
+          <div class="form-group">
+            <label for="console">Year Publication</label>
+            <input type="text" id="year" name="year" class="form-control" value="{{book.year_publication}}">
+          </div>
+          <button type="submit" class="btn btn-primary btn-salvar">Save</button>
+        </fieldset>
+      </form>
+{% endblock %}
